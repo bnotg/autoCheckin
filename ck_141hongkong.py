@@ -4,6 +4,7 @@ cron: 15 15 * * *
 new Env('141hongkong');
 """
 
+from unittest import result
 import requests
 
 from notify_mtr import send
@@ -31,9 +32,10 @@ class HONGKONG141:
 
     def check_cookie(self, cookie):
         headers = self.generate_headers(cookie)
-        res = requests.get("https://141hongkong.com/plugin.php?id=dsu_amupper:pper&ppersubmit=true&formhash=56607f37&infloat=yes&handlekey=dsu_amupper&inajax=1&ajaxtarget=fwin_content_dsu_amupper", headers=headers).text()
-        print(res)
-        return res
+        req = requests.get("https://141hongkong.com/plugin.php?id=dsu_amupper:pper&ppersubmit=true&formhash=56607f37&infloat=yes&handlekey=dsu_amupper&inajax=1&ajaxtarget=fwin_content_dsu_amupper", headers=headers)
+        result = req.content.decode("utf-8")
+        print(result)
+        return result
 
     def main(self):
         for check_item in self.check_items:
