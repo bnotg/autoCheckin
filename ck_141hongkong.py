@@ -17,7 +17,6 @@ class HONGKONG141:
     @staticmethod
     def generate_headers(cookie):
         headers = {
-            "Host": "api.sfacg.com",
             "authority": "141hongkong.com",
             "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,ja;q=0.5,th;q=0.4,vi;q=0.3,zh-HK;q=0.2,en-GB;q=0.1,en-NZ;q=0.1",
             "cache-control": "no-cache",
